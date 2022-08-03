@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddScoped<PizzaCounter>(); 
+builder.Services.AddScoped<OrderState>(); 
 // builder.Services.AddSingleton<BlazingPizza.Data.PizzaService>(); 
 builder.Services.AddHttpClient();
 builder.Services.AddSqlite<PizzaStoreContext>("Data Source=pizza.db");
