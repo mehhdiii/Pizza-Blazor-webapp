@@ -1,0 +1,54 @@
+@page "/pizzas"
+@* @using BlazingPizza.Data *@
+@* @inject PizzaService PizzaSvc *@
+@inject PizzaCounter SalesState
+
+<h1>Choose your Pizza </h1>
+
+<p>We have all these delicious recipes: </p>
+
+@* @if (@todayspizzas==null){
+    <p>We're finding out what pizzas are available today...</p>
+}
+else{ *@
+    <table>
+
+        <thead>
+            <tr>
+                <th>Pizza Name</th>
+                <th>Description</th>
+                <th>Vegetarian</th>
+                <th>Vegan?</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        @* <tbody>
+            @foreach (var piz in todayspizzas){
+                <tr>
+                    <td> piz.Name</td>
+                    <td> piz.Description</td>
+                    <td> piz.Vegetarian</td>
+                    <td> piz.Vegan</td>
+                    <td> piz.Price</td> 
+                </tr> 
+            }
+        </tbody> *@
+
+    </table>
+
+<button @onclick="counter"> click me</button>
+<p>@SalesState.PizzaSoldToday</p> 
+
+@* } *@
+
+
+
+@code{
+    @* private int pizzacount;  *@
+    private void counter(){
+        SalesState.PizzaSoldToday++;
+        @* pizzacount = SalesState.PizzaSoldToday;  *@
+    }
+     
+}
