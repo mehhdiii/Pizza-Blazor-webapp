@@ -3,6 +3,14 @@
 @* @inject PizzaService PizzaSvc *@
 @inject PizzaCounter SalesState
 
+<h1>My favorite pizza is: @favPizza</h1>
+
+<p>
+    Enter your favorite pizza:
+    <input @bind="favPizza" />
+</p>
+
+
 <h1>Choose your Pizza </h1>
 
 <p>We have all these delicious recipes: </p>
@@ -45,6 +53,8 @@ else{ *@
 
 
 @code{
+    private string favPizza { get; set; } = "Margherita"; 
+
     @* private int pizzacount;  *@
     private void counter(){
         SalesState.PizzaSoldToday++;

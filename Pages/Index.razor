@@ -24,6 +24,9 @@
 
 </div>
 
+
+<PizzaOrders order=@OrderState.Order orderstate=@OrderState/>
+
 @if(OrderState.ShowingConfigureDialog){
     <ConfigurePizzaDialog Pizza=@OrderState.ConfiguringPizza OnCancel=@OrderState.CancelConfigurePizzaDialog OnConfirm=@OrderState.ConfirmConfigurePizzaDialog />
 }
